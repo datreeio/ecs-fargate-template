@@ -1,4 +1,4 @@
-# webservicetemplate [![Build Status](https://travis-ci.com/datreeio/webservicetemplate.svg?token=KvsTPtKkzmpHyqnKzvpx&branch=master)](https://travis-ci.com/datreeio/webservicetemplate) [![Coverage Status](https://coveralls.io/repos/github/datreeio/webservicetemplate/badge.svg?branch=align-api&t=Pwy3wh)](https://coveralls.io/github/datreeio/webservicetemplate?branch=align-api) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+# webservicetemplate [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 Web Service Template
 
