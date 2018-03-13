@@ -1,12 +1,11 @@
 #!/bin/bash
 set -ex
+
 ECS_TIMEOUT=600
 
 # If pull request - quit
-if [[ "${TRAVIS_PULL_REQUEST}" == "true" ]]; then
-  exit
-else
-  echo "TRAVIS_PULL_REQUEST: ${TRAVIS_PULL_REQUEST}"
+if [ "${TRAVIS_PULL_REQUEST}" == "true" ]; then
+  exit 0
 fi
 
 # Set env vars
@@ -23,6 +22,10 @@ elif [ "${TRAVIS_PULL_REQUEST}" == "false" ] && [ "${TRAVIS_BRANCH}" == "staging
   DEPLOY=true
   CLUSTER_NAME=staging
   DOCKER_TAG=staging
+elif [ "${TRAVIS_PULL_REQUEST}" == "false" ] && [ "${TRAVIS_BRANCH}" == "dev" ]; then
+  DEPLOY=true
+  CLUSTER_NAME=dev
+  DOCKER_TAG=dev
 fi
 
 # Deploying only if on master/staging
