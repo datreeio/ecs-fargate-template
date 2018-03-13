@@ -1,0 +1,59 @@
+{
+  "name": "webservicetemplate",
+  "version": "0.0.0-placeholder",
+  "description": "Web Service Template",
+  "main": "server.js",
+  "scripts": {
+    "test": "nyc mocha --recursive && nyc report --reporter=text-lcov | coveralls",
+    "semantic-release": "npx semantic-release",
+    "semantic-release-local": "npx semantic-release --debug=false",
+    "prestart": "node config/configuration.js",
+    "pretest": "node config/configuration.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/datreeio/webservicetemplate.git"
+  },
+  "author": "datree.io",
+  "license": "MIT",
+  "devDependencies": {
+    "aws-sdk": "^2.206.0",
+    "semantic-release": "^15.0.1",
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.0",
+    "@semantic-release/git": "^4.0.1",
+    "mocha": "^4.1.0",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nyc": "^11.5.0",
+    "sinon": "^4.4.2",
+    "sinon-chai": "^3.0.0",
+    "supertest": "^3.0.0"
+  },
+  "dependencies": {
+    "commander": "^2.15.0",
+    "config": "^1.30.0",
+    "koa": "^2.5.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.4.0"
+  },
+  "bugs": {
+    "url": "https://github.com/datreeio/webservicetemplate/issues"
+  },
+  "homepage": "https://github.com/datreeio/webservicetemplate#readme",
+  "release": {
+    "prepare": [
+      "@semantic-release/git"
+    ],
+    "verifyConditions": [
+      "@semantic-release/github"
+    ],
+    "publish": [
+      "@semantic-release/github"
+    ],
+    "success": [
+      "@semantic-release/github"
+    ],
+    "fail": []
+  }
+}

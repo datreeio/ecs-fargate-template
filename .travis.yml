@@ -1,0 +1,19 @@
+sudo: required
+dist: trusty
+language: node_js
+services: docker
+node_js: '8'
+notifications:
+  slack: <REPLACE_WITH_SLACK_INFO>
+before_install:
+- npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+install:
+- npm install
+- npm run test
+- ./scripts/build.sh
+- ./scripts/deploy.sh
+script: true
+
+env:
+  global:
+  - AWS_DEFAULT_REGION=us-east-1
